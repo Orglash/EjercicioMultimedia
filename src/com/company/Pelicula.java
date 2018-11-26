@@ -30,7 +30,7 @@ public class Pelicula extends Multimedia {
     }
 
     public String toString() {
-        String infoPeli = "Protagonizado por: ";
+        String infoPeli = "\nProtagonizado por: ";
         if (actrizPrincipal != null) {
             infoPeli += actrizPrincipal;
             if (actorPrincipal != null) {

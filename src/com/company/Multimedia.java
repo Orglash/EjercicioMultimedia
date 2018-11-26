@@ -52,7 +52,7 @@ public class Multimedia {
     }
 
     public String toString() {
-        return "Título: " + titulo + " Autor: " + autor + " Formato " + formato + " Duración: " + duracion;
+        return "\nTítulo: " + titulo + " \nAutor: " + autor + " \nFormato " + formato + " \nDuración: " + duracion;
     }
 
     public boolean equals(Multimedia objeto) {
