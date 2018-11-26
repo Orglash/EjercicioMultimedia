@@ -1,44 +1,44 @@
 package com.company;
 
 public class Pelicula extends Multimedia {
-    private String actorPrincipal;
-    private String actrizPrincipal;
+    private String actor;
+    private String actriz;
 
     public Pelicula(String titulo, String autor, Formato formato, double duracion, String actor, String actriz) {
         super(titulo, autor, formato, duracion);
         if (actor == null && actriz == null) {
-            System.out.println("Los datos estan vacíos.");
+            System.out.println("\nSe debe introducir al menos un actor/actriz principal");
         }
-        actorPrincipal = actor;
-        actrizPrincipal = actriz;
+        this.actor = actor;
+        this.actriz = actriz;
     }
 
-    public String getActorPrincipal() {
-        return actorPrincipal;
+    public String getActor() {
+        return actor;
     }
 
-    public void setActorPrincipal(String actorPrincipal) {
-        this.actorPrincipal = actorPrincipal;
+    public void setActor(String actor) {
+        this.actor = actor;
     }
 
-    public String getActrizPrincipal() {
-        return actrizPrincipal;
+    public String getActriz() {
+        return actriz;
     }
 
-    public void setActrizPrincipal(String actrizPrincipal) {
-        this.actrizPrincipal = actrizPrincipal;
+    public void setActriz(String actriz) {
+        this.actriz = actriz;
     }
 
     public String toString() {
         String infoPeli = "\nProtagonizado por: ";
-        if (actrizPrincipal != null) {
-            infoPeli += actrizPrincipal;
-            if (actorPrincipal != null) {
-                infoPeli += " y " + actorPrincipal;
+        if (actriz != null) {
+            infoPeli += actriz;
+            if (actor != null) {
+                infoPeli += " y " + actor;
             }
         }else{
-            if (actorPrincipal != null) {
-                infoPeli += " y " + actorPrincipal;
+            if (actor != null) {
+                infoPeli += actor;
             }
         }
         return super.toString() + infoPeli;

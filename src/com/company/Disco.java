@@ -5,6 +5,7 @@ public class Disco extends Multimedia {
 
     public Disco(String titulo, String autor, Formato formato, double duracion, String genero) {
         super(titulo, autor, formato, duracion);
+        this.genero = genero ;
     }
 
     public String getGenero() {
@@ -17,6 +18,8 @@ public class Disco extends Multimedia {
 
     @Override
     public String toString() {
-        return "Genero= " + genero ;
+        String infoDisco="\nGenero: ";
+        infoDisco+= genero;
+        return super.toString() + infoDisco;
     }
 }

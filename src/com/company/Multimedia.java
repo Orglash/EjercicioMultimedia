@@ -1,15 +1,17 @@
 package com.company;
 
+import java.util.Objects;
+
 enum Formato {
     wav, mp3, midi, avi, mov, mpg, cdAudio, dvd
 }
 
 public class Multimedia {
 
-    private String titulo;
-    private String autor;
-    private Formato formato;
-    private double duracion;
+    protected String titulo;
+    protected String autor;
+    protected Formato formato;
+    protected double duracion;
 
     public Multimedia(String titulo, String autor, Formato formato, double duracion) {
 
@@ -52,11 +54,16 @@ public class Multimedia {
     }
 
     public String toString() {
-        return "\nTítulo: " + titulo + " \nAutor: " + autor + " \nFormato " + formato + " \nDuración: " + duracion;
+        return "\nTítulo: " + titulo + " \nAutor: " + autor + " \nFormato: " + formato + " \nDuración: " + duracion;
     }
 
-    public boolean equals(Multimedia objeto) {
-        return titulo.equals(objeto.getTitulo()) && autor.equals(objeto.getAutor());
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Multimedia that = (Multimedia) o;
+        return  Objects.equals(titulo, that.titulo) &&
+                Objects.equals(autor, that.autor);
     }
 
 }
